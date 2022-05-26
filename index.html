@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>E-Script</title>
+</head>
+<body>
+    <header>
+       <div class="containerFlexHeader">
+            <div class="logo">
+                <h1>E-Script</h1>
+            </div>
+            <div class="navContainerDesktop">
+                <nav>
+                    <ul>
+                        <li><a href="#">Todos</a></li>
+                        <li><a href="#">Acessórios</a></li>
+                        <li><a href="#">Calçados</a></li>
+                        <li><a href="#">Camisetas</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="navContainerMobile">
+                <div class="menuHamburguer"></div>
+                <nav>
+                    <ul>
+                        <li><a href="#">Todos</a></li>
+                        <li><a href="#">Acessórios</a></li>
+                        <li><a href="#">Calçados</a></li>
+                        <li><a href="#">Camisetas</a></li>
+                    </ul>
+                </nav>
+            </div>
+       </div>
+    </header>
+    <main>
+        <section class="containerStore">
+            <ul class="itensList"></ul>
+        </section>
+        <section class="containerSearch">
+            <div class="inputSearch">
+                <input type="text" placeholder="Pesquisar Item ou Preço">
+                <button id="searchBtn">Pesquisar</button>
+            </div>
+            <div class="containerCart">
+                <h3>Carrinho de compras</h3>
+                <ul class="cartList">
+                    <div id="emptyDiv">
+                        <span id="emptyInfo">Carrinho Vazio</span>
+                        <span>Adicione Itens</span>
+                    </div>
+                    <!-- Modelo par adiconar ao carrinho -->
+                    <!-- <li class="itemCart">
+                        <div class="imgItemCart">
+                            <img src="./assets/img/mascara.svg" alt="">
+                        </div>
+                        <div class="infoItemCart">
+                            <h4 id="nameProductCart">Mask</h4>
+                            <p id="priceProductCart">R$40</p>
+                            <p id="removeProductCart">Remover produto</p>
+                        </div>
+                        <div class="quantyCartItens">
+                            <button id="more">+</button>
+                            <p id="quantyNumber">1</p>
+                            <button id="sub">-</button>
+                        </div>
+                    </li> -->
+                </ul>
+                <ul class="qtdTotal">
+                    <li>
+                        <p>Quantidade</p>
+                        <span id="qtd">0</span>
+                    </li>
+                    <li>
+                        <p>Valor</p>
+                        <span id="valor">R$00,00</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    <script src="./assets/js/database.js"></script>
+    <script src="./assets/js/index.js"></script>
+</body>
+</html>
