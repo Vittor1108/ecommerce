@@ -294,7 +294,21 @@ main{
     align-items: center;
     background-color: var(--grey-0-bg);
     text-align: center;
+    overflow-y: scroll;
 }
+
+.cartList::-webkit-scrollbar {
+    width: 6px;               /* width of the entire scrollbar */
+  }
+  
+  .cartList::-webkit-scrollbar-track {
+    background: #ccc;        /* color of the tracking area */
+  }
+  
+  .cartList::-webkit-scrollbar-thumb {
+    background: var(--color-secondary);   /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+  }
 
 .cartList #emptyInfo{
     width: 100%;
@@ -314,6 +328,7 @@ main{
     padding: 10px;
     width: 100%;
 }
+
 
 .imgItemCart{
     background-color: #fff;
@@ -338,7 +353,7 @@ main{
     margin: 5px auto;
 }
 
-#removeProductCart{
+.removeProductCart{
     font-size: 14px;
     color: #2E245E;
     text-align: left;
@@ -347,7 +362,7 @@ main{
     transition: all .3s;
 }
 
-#removeProductCart:hover{
+.removeProductCart:hover{
     text-decoration: underline;
 }
 

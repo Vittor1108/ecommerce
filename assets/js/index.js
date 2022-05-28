@@ -34,28 +34,24 @@ function addElemenStoreInDoom(){
 }
 addElemenStoreInDoom();
 
-
-
-
 //ADICIONAR ITENS AO CARRINHO
+
 //SELECIONA UL DO CARRINHO 
 const ulCart = document.querySelector('.cartList');
 
 //INICIA O ARRAY DO CARRINHO
-const carArray = [];
+let  carArray = [];
 
 //SELECIONA O BTN "ADICIONAR NO CARRINHO"
 const btnAddToCart = ulList.querySelectorAll(".addCart");
 
 //ADCIONA O EVENTO DE CLIQUE NO BTN
 function eventAddItemOnCart(){
-
-    btnAddToCart.forEach((element, i) => {
-
+    btnAddToCart.forEach(element => {
         element.addEventListener('click', (el)=>{
             const indice = Number(el.target.id) - 1;
             addItemArrayCart(indice);
-            ulCart.appendChild(creatLIFromCart(creatElementHTMLCart(data[indice].img, data[indice].nameItem, data[indice].value)));
+            ulCart.appendChild(creatLIFromCart(creatElementHTMLCart(data[indice].img, data[indice].nameItem, data[indice].value, data[indice].id)));
             cartWithItemOrNoteItem();
         })
     });
@@ -69,7 +65,7 @@ function addItemArrayCart(el){
 }
 
 //FUNÇÃO PARA CRIAR O HTML DO ITEM DO CARRINHO 
-function creatElementHTMLCart(productImg, productName, productPrice){
+function creatElementHTMLCart(productImg, productName, productPrice, productId){
     
     const element = `<div class="imgItemCart">
                         <img src="${productImg}" alt="${productName}">
@@ -77,7 +73,7 @@ function creatElementHTMLCart(productImg, productName, productPrice){
                     <div class="infoItemCart">
                         <h4 id="nameProductCart">${productName}</h4>
                         <p id="priceProductCart">R$${productPrice},00</p>
-                        <p id="removeProductCart">Remover produto</p>
+                        <p class="removeProductCart" id="${productId}">Remover produto</p>
                     </div>
                     <div class="quantyCartItens">
                         <button id="more">+</button>
@@ -92,6 +88,28 @@ function creatLIFromCart(element){
     li.classList.add("itemCart");
     li.innerHTML = `${element}`;
     return li;
+}
+
+
+//FUNÇÕES PARA REMOVAR O ITEM DO CARRINHO 
+document.body.addEventListener('click', e=>{
+    
+    if(e.target.className === "removeProductCart"){
+        carArray = removeProductWithCart(carArray, "id", Number(e.target.id));
+        removeLICart(e)
+        cartWithItemOrNoteItem();
+
+    }
+})
+
+function removeLICart(event){
+    const elFilho = event.target.parentNode;
+    const elPai = elFilho.parentNode;
+    return elPai.remove();
+}
+
+function removeProductWithCart(arr, prop, value){
+    return arr.filter(function(i) { return i[prop] !== value; });
 }
 
 //REMOVE O SPAN CASO O CARINHO TENHA ALGUM ITEM;
