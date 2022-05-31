@@ -49,10 +49,12 @@ const btnAddToCart = ulList.querySelectorAll(".addCart");
 function eventAddItemOnCart(){
     btnAddToCart.forEach(element => {
         element.addEventListener('click', (el)=>{
-            const indice = Number(el.target.id) - 1;
-            addItemArrayCart(indice);
-            ulCart.appendChild(creatLIFromCart(creatElementHTMLCart(data[indice].img, data[indice].nameItem, data[indice].value, data[indice].id)));
+            addItemArrayCart(el);
+            addItemInUlCart(el);
             cartWithItemOrNoteItem();
+            addValueInHTML();
+            addQtdInHTML();
+            btnMore(el);
         })
     });
     
@@ -61,8 +63,17 @@ function eventAddItemOnCart(){
 eventAddItemOnCart();
 
 function addItemArrayCart(el){
-    carArray.push(data[el]);
+    const indice = Number(el.target.id) - 1;
+    carArray.push(data[indice]);
 }
+
+function addItemInUlCart(el){
+    const indice = Number(el.target.id) - 1;
+    ulCart.appendChild(creatLIFromCart(creatElementHTMLCart(data[indice].img, data[indice].nameItem, data[indice].value, data[indice].id)));
+}
+
+//IMPEDIR QUE O MESMO ELEMENTO SEJA ADICIONADO NO CARRINHO
+
 
 //FUNÇÃO PARA CRIAR O HTML DO ITEM DO CARRINHO 
 function creatElementHTMLCart(productImg, productName, productPrice, productId){
@@ -74,12 +85,7 @@ function creatElementHTMLCart(productImg, productName, productPrice, productId){
                         <h4 id="nameProductCart">${productName}</h4>
                         <p id="priceProductCart">R$${productPrice},00</p>
                         <p class="removeProductCart" id="${productId}">Remover produto</p>
-                    </div>
-                    <div class="quantyCartItens">
-                        <button id="more">+</button>
-                        <p id="quantyNumber">1</p>
-                        <button id="sub">-</button>
-                    </div> `
+                    </div>`
     return element;
 }
 
@@ -92,13 +98,13 @@ function creatLIFromCart(element){
 
 
 //FUNÇÕES PARA REMOVAR O ITEM DO CARRINHO 
-document.body.addEventListener('click', e=>{
-    
+document.body.addEventListener('click', e=>{  
     if(e.target.className === "removeProductCart"){
         carArray = removeProductWithCart(carArray, "id", Number(e.target.id));
-        removeLICart(e)
+        removeLICart(e);
+        addQtdInHTML();
+        addValueInHTML();
         cartWithItemOrNoteItem();
-
     }
 })
 
@@ -116,11 +122,54 @@ function removeProductWithCart(arr, prop, value){
 function cartWithItemOrNoteItem(){
     const li = ulCart.querySelectorAll('li');
     const emptyDiv = ulCart.querySelector('#emptyDiv');
+    const qtdUl = document.querySelector('.qtdTotal');
     if(li.length !== 0){
         emptyDiv.style.display = 'none';
+        qtdUl.style.display = 'block';
     }else{
-        emptyDiv.style.display = 'block'
+        emptyDiv.style.display = 'block';
+        qtdUl.style.display = 'none';
     }
-};
+}
 
+//FUNÇÕES PARA CALCULAR O PREÇO DO CARRINHO 
+function calcValueCart(){
+    const total = carArray.reduce((acumulador, valor)=>{
+        acumulador += valor.value;
+        return acumulador;
+    }, 0);
 
+    return total;
+}
+
+//ADICIONA O TOTAL NO HTML 
+function addValueInHTML(){
+    const value = document.querySelector('#valor');
+    return value.innerHTML = `R$${calcValueCart()},00`;
+}
+
+function addQtdInHTML(){
+    const qtd = document.querySelector("#qtd");
+    return qtd.innerHTML = `${calcQtdCart()}`;
+}
+
+//FUNÇÕES PARA CALCULAR A QUANTIDADE DE ITENS NO CARRINHO 
+function calcQtdCart(){
+    const total = carArray.reduce((acumulador, valor)=>{
+        acumulador += 1;
+        return acumulador;
+    }, 0);
+
+    return total;
+} 
+
+//Botões mais e menos 
+function btnMore(element){
+    const more = document.querySelectorAll("#more");
+    const qtd = document.querySelector("#qtd");
+    more.forEach(element =>{
+        element.addEventListener("click", ()=>{
+            
+        })
+    })
+}
