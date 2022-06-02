@@ -43,10 +43,11 @@ const ulCart = document.querySelector('.cartList');
 let  carArray = [];
 
 //SELECIONA O BTN "ADICIONAR NO CARRINHO"
-const btnAddToCart = ulList.querySelectorAll(".addCart");
 
 //ADCIONA O EVENTO DE CLIQUE NO BTN
 function eventAddItemOnCart(){
+
+    const btnAddToCart = ulList.querySelectorAll(".addCart");
     btnAddToCart.forEach(element => {
         element.addEventListener('click', (el)=>{
             addItemArrayCart(el);
@@ -54,7 +55,6 @@ function eventAddItemOnCart(){
             cartWithItemOrNoteItem();
             addValueInHTML();
             addQtdInHTML();
-            btnMore(el);
         })
     });
     
@@ -85,7 +85,7 @@ function creatElementHTMLCart(productImg, productName, productPrice, productId){
                         <h4 id="nameProductCart">${productName}</h4>
                         <p id="priceProductCart">R$${productPrice},00</p>
                         <p class="removeProductCart" id="${productId}">Remover produto</p>
-                    </div>`
+                    </div>`;
     return element;
 }
 
@@ -164,12 +164,90 @@ function calcQtdCart(){
 } 
 
 //Botões mais e menos 
-function btnMore(element){
-    const more = document.querySelectorAll("#more");
-    const qtd = document.querySelector("#qtd");
-    more.forEach(element =>{
-        element.addEventListener("click", ()=>{
-            
-        })
+
+
+//FILTRO POR CATEGORIA - >
+document.body.addEventListener('click', e =>{
+
+    if(e.target.innerText === 'Todos'){
+        ulList.innerText = '';
+        transitionBoldText();
+        addElemenStoreInDoom();
+        eventAddItemOnCart();
+
+    }else if(e.target.innerText === 'Acessórios'){
+        transitionBoldText();
+        filterCategorys('Acessórios');
+
+    }else if(e.target.innerText === 'Calçados'){
+        transitionBoldText();
+        filterCategorys('Calçados');
+
+    }else if(e.target.innerHTML === 'Camisetas'){
+        transitionBoldText();
+        filterCategorys('Camisetas');
+
+    }
+    
+})
+
+function filterCategorys(category){
+    const filter = data.filter(obj => obj.tag === category);
+    ulList.innerText = '';
+    for(let obeject of filter){
+        ulList.appendChild(creatLI(creatElementHTMLStore(obeject.img, obeject.tag, obeject.nameItem, obeject.description, obeject.value, obeject.id)));
+    }
+
+    eventAddItemOnCart();
+}
+
+function transitionBoldText(){
+    const todos = document.querySelector(".category:nth-child(1) a");
+    const acessorios = document.querySelector(".category:nth-child(2) a");
+    const calcados = document.querySelector(".category:nth-child(3) a");
+    const camisetas = document.querySelector(".category:nth-child(4) a");
+
+    todos.addEventListener('click', e=>{
+        addRemoveClass(todos, acessorios, calcados, camisetas);
     })
+    
+    acessorios.addEventListener('click', e=>{
+        addRemoveClass(acessorios, todos, calcados, camisetas);
+    
+    })
+    
+    camisetas.addEventListener('click', e=>{
+        addRemoveClass(camisetas, todos, acessorios, calcados);
+    })
+
+    calcados.addEventListener('click', e=>{
+        addRemoveClass(calcados, todos, acessorios, camisetas);     
+    })
+}
+
+function addRemoveClass(elAdd, elRemove1, elRemove2, elRemove3){
+    elAdd.classList.add('fontWeigthBold');
+    elRemove1.classList.remove('fontWeigthBold');
+    elRemove2.classList.remove('fontWeigthBold');
+    elRemove3.classList.remove('fontWeigthBold');
+}
+
+//FILTRO POR PESQUISA
+
+//REFERENCIA DO INPUT 
+const inputSearch = document.querySelector('.inputSearch2');
+inputSearch.addEventListener('input', e =>{
+    filterSearch(inputSearch);
+})
+
+function filterSearch(value){
+    const inputValue = value.value;
+    const filtro = data.filter(obj => obj.nameItem.includes(inputValue));
+    ulList.innerText = '';
+    for(let obeject of filtro){
+        ulList.appendChild(creatLI(creatElementHTMLStore(obeject.img, obeject.tag, obeject.nameItem, obeject.description, obeject.value, obeject.id)));
+    }
+
+    eventAddItemOnCart();
+
 }

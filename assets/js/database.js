@@ -9,7 +9,7 @@ const data = [
         "Adicione um pouco de energia ao seu guarda-roupa de inverno com esta jaqueta vibrante...",
       value: 100,
       addCart: "Adicionar ao carrinho",
-      tag: ["Camisetas"],
+      tag: "Camisetas",
       quantity: 0
     },
     {
@@ -20,7 +20,7 @@ const data = [
         "O gorro Next.js chegou! Esta beldade bordada tem um ajuste confortável que garante que...",
       value: 100,
       addCart: "Adicionar ao carrinho",
-      tag: ["Acessórios"],
+      tag: "Acessórios",
       quantity: 0
     },
     {
@@ -31,7 +31,7 @@ const data = [
         "Esta máscara facial durável é feita de duas camadas de tecido tratado e possui presilhas...",
       value: 40,
       addCart: "Adicionar ao carrinho",
-      tag: ["Acessórios"],
+      tag: "Acessórios",
       quantity: 0
     },
     {
@@ -42,7 +42,7 @@ const data = [
         "Esta t-shirt é imprescindível no seu guarda-roupa, combinando o caimento intemporal de...",
       value: 100,
       addCart: "Adicionar ao carrinho",
-      tag: ["Camisetas"],
+      tag: "Camisetas",
       quantity: 0
     },
     {
@@ -53,7 +53,7 @@ const data = [
         "Agora você encontrou a camiseta básica do seu guarda-roupa. É feito de um mais grosso...",
       value: 100,
       addCart: "Adicionar ao carrinho",
-      tag: ["Camisetas"],
+      tag: "Camisetas",
       quantity: 0
     },
     {
@@ -64,7 +64,7 @@ const data = [
         "Proteja-se dos elementos com esta jaqueta embalável Champion. Esta jaqueta de poliést...",
       value: 100,
       addCart: "Adicionar ao carrinho",
-      tag: ["Camisetas"],
+      tag: "Camisetas",
       quantity: 0
     },
     {
@@ -75,7 +75,7 @@ const data = [
         "Boné com aba curva desestruturada estilo Dad Hat, ajuste traseiro em fivela de meta...",
       value: 149,
       addCart: "Adicionar ao carrinho",
-      tag: ["Acessórios"],
+      tag: "Acessórios",
       quantity: 0
     },
     {
@@ -86,7 +86,7 @@ const data = [
         "A Mochila Tribeca é como uma amizade gente boa que te dá a maior moral sempre que v....",
       value: 359,
       addCart: "Adicionar ao carrinho",
-      tag: ["Acessórios"],
+      tag: "Acessórios",
       quantity: 0
     },
     {
@@ -97,7 +97,7 @@ const data = [
         "Nada melhor do que uma garrafa térmica com imã Segue o Fluxo na correria do seu seu dia a dia...",
       value: 159,
       addCart: "Adicionar ao carrinho",
-      tag: ["Acessórios"],
+      tag: "Acessórios",
       quantity: 0
     },
     {
@@ -108,7 +108,7 @@ const data = [
         "Dial com marcadores minimalistas e detalhe de folhagem texturizada no centro...",
       value: 369,
       addCart: "Adicionar ao carrinho",
-      tag: ["Acessórios"],
+      tag: "Acessórios",
       quantity: 0
     },
     {
@@ -119,7 +119,7 @@ const data = [
         "Proteja-se dos elementos com esta jaqueta embalável Champion. Esta jaqueta de poliést...",
       value: 99,
       addCart: "Adicionar ao carrinho",
-      tag: ["Acessórios"],
+      tag: "Acessórios",
       quantity: 0
     },
     {
@@ -130,7 +130,7 @@ const data = [
         "Mala grande com bolso frontal de zíper para melhor organização para os dias de treino...",
       value: 135,
       addCart: "Adicionar ao carrinho",
-      tag: ["Acessórios"],
+      tag: "Acessórios",
       quantity: 0
     },
     {
@@ -141,7 +141,7 @@ const data = [
         "Esse modelo futurista, é o tênis do momento. Cheio de personalidade e robusto, o Tênis Chunky...",
       value: 179,
       addCart: "Adicionar ao carrinho",
-      tag: ["Calçados"],
+      tag: "Calçados",
       quantity: 0
     },
     {
@@ -152,7 +152,7 @@ const data = [
         "É a escolha perfeita para quem busca conforto durante o dia a dia. Com a palmilha leve e macia...",
       value: 103,
       addCart: "Adicionar ao carrinho",
-      tag: ["Calçados"],
+      tag: "Calçados",
       quantity: 0
     },
     {
@@ -163,7 +163,7 @@ const data = [
         "Icônico e atemporal, é o que você precisa para deixar seus looks estilosos e cheios de atitude...",
       value: 129,
       addCart: "Adicionar ao carrinho",
-      tag: ["Calçados"],
+      tag: "Calçados",
       quantity: 0
     },
     {
@@ -174,7 +174,7 @@ const data = [
         "O Tênis Casual Texturizado Knit Preto, segue em alta nessa temporada e traz uma nova propo...",
       value: 136,
       addCart: "Adicionar ao carrinho",
-      tag: ["Calçados"],
+      tag: "Calçados",
       quantity: 0
     },
     {
@@ -185,7 +185,7 @@ const data = [
         "O tênis Blaze of Glory chega com as últimas tendências em design e versatilidade para usar..",
       value: 799,
       addCart: "Adicionar ao carrinho",
-      tag: ["Calçados"],
+      tag: "Calçados",
       quantity: 0
     },
     {
@@ -196,7 +196,7 @@ const data = [
         "Feito para os maratonistas do futuro, o tênis Pacer Future traz construção slip-on para ma...",
       value: 349,
       addCart: "Adicionar ao carrinho",
-      tag: ["Calçados"],
+      tag: "Calçados",
       quantity: 0
     },
     {
@@ -207,7 +207,7 @@ const data = [
         "Com 53 anos de história para contar, a chuteira KING Platinum 21 Campo foi feita para eleva...",
       value: 1199,
       addCart: "Adicionar ao carrinho",
-      tag: ["Calçados"],
+      tag: "Calçados",
       quantity: 0
     },
     {
@@ -218,7 +218,7 @@ const data = [
         "Com sua inspiração atlética e atitude de rua, o Electron 2.0 tem o estilo perfeito para suas...",
       value: 399,
       addCart: "Adicionar ao carrinho",
-      tag: ["Calçados"],
+      tag: "Calçados",
       quantity: 0
     },
     {
@@ -229,7 +229,7 @@ const data = [
         "Camiseta Manga Longa Lisa de alto padrão pra quem tem estilo e atitude e proteção Solar UV +50...",
       value: 34,
       addCart: "Adicionar ao carrinho",
-      tag: ["Camisetas"],
+      tag: "Camisetas",
       quantity: 0
     },
     {
@@ -240,7 +240,7 @@ const data = [
         "aqueta corta-vento cropped esportiva, com capuz, recortes em tela e bolsos. O modelo é confecci...",
       value: 159,
       addCart: "Adicionar ao carrinho",
-      tag: ["Camisetas"],
+      tag: "Camisetas",
       quantity: 0
     },
     {
@@ -251,7 +251,7 @@ const data = [
         "Por não possuir nenhum tipo de costura, diminui drasticamente qualquer possível ponto de fricção...",
       value: 122,
       addCart: "Adicionar ao carrinho",
-      tag: ["Camisetas"],
+      tag: "Camisetas",
       quantity: 0
     },
     {
@@ -262,7 +262,7 @@ const data = [
         "Já começamos esta descrição avisando que, de básica, esta camiseta tem apenas o nome! Extremament...",
       value: 115,
       addCart: "Adicionar ao carrinho",
-      tag: ["Camisetas"],
+      tag: "Camisetas",
       quantity: 0
     },
   ];
